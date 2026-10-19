@@ -329,7 +329,7 @@ img { max-width: 100%; display: block; }
   display: grid;
   place-items: center;
   padding: 24px 20px;
-  background: linear-gradient(180deg, var(--teal-50), var(--white));
+  background: linear-gradient(140deg, var(--teal-900), var(--teal-700));
 }
 .card__media--icon img {
   object-fit: contain;
