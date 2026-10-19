@@ -323,6 +323,20 @@ img { max-width: 100%; display: block; }
 }
 .card__media img { width: 100%; height: 100%; object-fit: cover; }
 .card__media img.img--top { object-position: center 25%; }
+.card__media--icon {
+  aspect-ratio: auto;
+  min-height: 150px;
+  display: grid;
+  place-items: center;
+  padding: 24px 20px;
+  background: linear-gradient(180deg, var(--teal-50), var(--white));
+}
+.card__media--icon img {
+  object-fit: contain;
+  width: auto;
+  height: 120px;
+  max-width: 100%;
+}
 .card__body { padding: 22px 22px 26px; }
 .card__icon {
   width: 64px;
