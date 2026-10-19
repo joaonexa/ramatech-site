@@ -355,22 +355,70 @@ img { max-width: 100%; display: block; }
   background: var(--white);
   border: 1px solid var(--line);
 }
+.norms__head { margin-bottom: 20px; }
 .norms__title {
   font-family: var(--font-head);
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--teal-900);
-  margin-bottom: 16px;
 }
-.norms__chips { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 10px; }
-.norms__chip {
-  padding: 8px 16px;
-  border-radius: 999px;
+.norms__sub { color: var(--muted); font-size: 14px; margin-top: 4px; }
+.norms__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.norm {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  border-radius: 12px;
   background: var(--teal-50);
   border: 1px solid var(--teal-100);
+}
+.norm__icon {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--teal-600);
+  color: var(--white);
+  display: grid;
+  place-items: center;
+}
+.norm__icon svg { width: 22px; height: 22px; }
+.norm__name { font-weight: 700; color: var(--teal-900); font-size: 14.5px; line-height: 1.3; }
+.norm__desc { color: var(--muted); font-size: 13px; margin-top: 3px; line-height: 1.45; }
+
+/* ---------------- Galeria ---------------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.gallery__item {
+  margin: 0;
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--teal-100);
+}
+.gallery__item img {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+.gallery__item:hover img { transform: scale(1.06); }
+.gallery__item figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 44px 16px 14px;
+  background: linear-gradient(180deg, transparent, rgba(3, 37, 48, 0.86));
+  color: var(--white);
   font-size: 13.5px;
-  font-weight: 500;
-  color: var(--teal-800);
+  font-weight: 600;
+  letter-spacing: 0.2px;
 }
 
 /* ---------------- Diferenciais ---------------- */
@@ -565,6 +613,8 @@ img { max-width: 100%; display: block; }
   .about__img { max-height: 420px; }
   .contact { grid-template-columns: 1fr; }
   .footer__inner { grid-template-columns: 1fr 1fr; }
+  .norms__grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 720px) {
@@ -591,6 +641,8 @@ img { max-width: 100%; display: block; }
   .hero__inner { padding-top: 64px; padding-bottom: 56px; }
   .hero__stats { gap: 28px; }
   .grid, .grid--dark { grid-template-columns: 1fr; }
+  .norms__grid { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr; }
   .form__row { grid-template-columns: 1fr; }
   .section { padding: 64px 0; }
   .footer__inner { grid-template-columns: 1fr; gap: 34px; }
