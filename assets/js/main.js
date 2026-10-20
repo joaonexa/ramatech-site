@@ -51,6 +51,16 @@
   var year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
 
+  // Remove o selo "Powered by Netlify" injetado automaticamente pelo Netlify
+  function removeNetlifyBadge() {
+    var badge = document.getElementById('nl-badge-frame');
+    if (badge && badge.parentNode) badge.parentNode.removeChild(badge);
+  }
+  removeNetlifyBadge();
+  if ('MutationObserver' in window) {
+    new MutationObserver(removeNetlifyBadge).observe(document.body, { childList: true });
+  }
+
   // Formulário: monta um e-mail (mailto) com a mensagem do visitante
   var form = document.getElementById('contactForm');
   if (form) {
